@@ -1,47 +1,95 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Elroie Games</title>
+
+	<title>איקס עיגול</title>
+
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-	<header>
-		<h1>🎮 Elroie Games</h1>
+	<div class="background"></div>
 
-		<input id="search" type="text" placeholder="🔍 חפש משחק...">
-	</header>
+	<div class="container">
 
-	<nav>
-		<button onclick="filterGames('all')">הכל</button>
-		<button onclick="filterGames('arcade')">ארקייד</button>
-		<button onclick="filterGames('puzzle')">חשיבה</button>
-		<button onclick="filterGames('action')">פעולה</button>
-	</nav>
+		<h1>⭕ איקס עיגול ❌</h1>
 
-	<main id="gamesContainer">
+		<div id="menu">
 
-		<div class="game-card arcade" onclick="window.open('flappy.html', '_blank')">
-			<img src="https://via.placeholder.com/300x180" alt="Flappy Bird">
-			<p>Flappy Bird</p>
+			<h2>בחר רמת קושי</h2>
+
+			<div class="buttons">
+
+				<button class="difficulty easy" onclick="startGame('easy')">
+					😊 קל
+				</button>
+
+				<button class="difficulty medium" onclick="startGame('medium')">
+					😎 בינוני
+				</button>
+
+				<button class="difficulty hard" onclick="startGame('hard')">
+					🔥 קשה
+				</button>
+
+			</div>
+
 		</div>
 
-		<div class="game-card puzzle" onclick="window.open('///C:/Users/elroi/Desktop/%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D/%D7%90%D7%99%D7%A7%D7%A1-%D7%A2%D7%99%D7%92%D7%95%D7%9C/index.html', '_blank')">
-	        <img src="tick_tack_toe.png" alt="Tic Tac Toe">
-	        <p>איקס עיגול</p>
-        </div>
+		<div id="game" class="hidden">
 
-		<div class="game-card action" onclick="window.open('///C:/Users/elroi/Desktop/%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D/%D7%A1%D7%A0%D7%99%D7%99%D7%A7/index.html', '_blank')">
-			<img src="snake.png" alt="Snake">
-			<p>Snake</p>
+			<div class="top">
+
+				<div id="status">
+					התור שלך (❌)
+				</div>
+
+				<button id="restart" onclick="restartGame()">
+					🔄 משחק חדש
+				</button>
+
+			</div>
+
+			<div id="board">
+
+				<div class="cell" data-index="0"></div>
+				<div class="cell" data-index="1"></div>
+				<div class="cell" data-index="2"></div>
+
+				<div class="cell" data-index="3"></div>
+				<div class="cell" data-index="4"></div>
+				<div class="cell" data-index="5"></div>
+
+				<div class="cell" data-index="6"></div>
+				<div class="cell" data-index="7"></div>
+				<div class="cell" data-index="8"></div>
+
+			</div>
+
 		</div>
 
-	</main>
+		<div id="popup" class="popup hidden">
+
+			<h2 id="popupText"></h2>
+
+			<button onclick="restartGame()">
+				שחק שוב
+			</button>
+
+			<button onclick="backToMenu()">
+				בחירת רמה
+			</button>
+
+		</div>
+
+	</div>
 
 	<script src="script.js"></script>
 
 </body>
+
 </html>
